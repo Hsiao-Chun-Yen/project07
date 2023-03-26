@@ -1,0 +1,96 @@
+// body
+//   margin: 0
+//   background-color: #9b9b9b
+//   font-family: '微軟正黑體', sans-serif
+  
+h1
+  font-size: 200px
+  
+.c-loading
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: fixed
+  width: 100vw
+  height: 100vh
+  left: 0
+  top: 0
+  background-color: $color-primary
+  opacity: 1
+  
+@keyframes jumping
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(5px)
+    
+@keyframes loading
+  from
+    opacity: 1
+  to
+    opacity: 0.6
+
+/* 打字效果 */
+:root 
+  /* 字符数量 */
+  --steps: 7
+  /* 动画时间 */
+  --duration: 1.8s
+  /* 字体大小 */
+  --fontSize: 50px
+  /* 光标大小 */
+  --cursorSize: 20px
+
+
+.text 
+  color: $color-white
+  position: relative
+  display: inline-block
+  font-family: 'Courier New', Courier, monospace
+  font-size: var(--fontSize)
+  line-height: 1
+
+
+.text::before 
+  content: ''
+  width: 100%
+  height: var(--fontSize)
+  z-index: 1
+  position: absolute
+  background: linear-gradient(#fff, #fff) no-repeat top right
+  // background: linear-gradient($color-primary, $color-primary) no-repeat top right
+  animation: showText var(--duration) steps(var(--steps)) forwards
+
+
+/* 光标闪烁动画 */
+@keyframes blink 
+  0% 
+    background-color: black
+  
+  50% 
+    background-color: transparent
+  
+  100% 
+    background-color: black
+    
+
+
+/* 光标移动动画 */
+@keyframes moveCursor 
+  0% 
+    left: 0%
+  
+  100% 
+    left: 100%
+  
+
+
+/* 背景移动动画 */
+@keyframes showText 
+  0% 
+    background-size: 100% 100%
+  100% 
+    background-size: 0% 100%
+    
+

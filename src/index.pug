@@ -1,0 +1,125 @@
+doctype html
+html(lang="en")
+  head
+    //- pug才能用include
+    include includes/_config.pug
+    include includes/_head.pug
+    title #{title}
+  body 
+    include includes/_navbar.pug
+
+    header 
+      .c-loading
+        .text Welcome
+    main 
+      section.bgimg#about
+        h3 關於我
+        div.about-box(data-aos="fade-up")
+          div.img-box
+            img.abimg(src="img/hacker.png", alt="頭貼")
+          div.about-box__context
+            p 我是蕭君妍，畢業於義守大學，資訊工程學系。 
+              | 因在校期間協助老師一些有相關的產學合作計畫與人才培育所以認識目前的公司，也因此獲得面試機會，成功進入公司成為工程師。
+              | 在公司後主要以後端工程為主，主要是以PHP程式撰寫居多。
+      
+      section#experience
+        div.experience-box
+          h3 經歷
+          div.experience-box__context(data-aos="fade-up")
+            .timeline
+              .containers.left
+                h4.txtleft 2022
+                .content
+                  p ➤ 協助公司舉辦第五屆「全國臨床技能競賽」
+                  p ➤ 協助公司參與「全國醫療品質獎」，獲得銅牌
+                  
+              .containers.right
+                h4 2021
+                .content
+                  p ➤ 協助公司舉辦第四屆「全國臨床技能競賽」
+              .containers.left
+                h4.txtleft 2020
+                .content
+                  P ➤ 參與108年度大專校院創新創業扎根計畫-創業管理與行動學習計畫
+                  P ➤ 參與工業技術研究院舉辦的影像辨識競賽，佳作
+                  p ➤ 進入「醫諾華醫學科技股份有限公司」成為工程師
+                  p ➤ 協助公司舉辦第三屆「全國臨床技能競賽」
+                    
+              .containers.right
+                h4 2019
+                .content(data-aos="fade-right")
+                  p ➤ 成為老師教育部AI計畫專任助理
+                  p ➤ 參與fiti創新創業計畫
+        
+      section#ability
+        .ability-box(data-aos="fade-up")
+          h3 能力
+          .ability-box__context(data-aos="fade-up")
+            //- .pie.animate(style='--p:85;--c:#83B5D9')  85%
+            .chsrtbox
+              .chart.x-85
+                p 85%
+              .chartcontent 
+                p PHP
+            .chsrtbox
+              .chart.x-90
+                p 90%
+              .chartcontent 
+                p HTML
+            .chsrtbox
+              .chart.x-60
+                p 60%
+              .chartcontent 
+                p CSS 
+            .chsrtbox
+              .chart.x-60
+                p 60%
+              .chartcontent 
+                p Javascript
+            //- .chsrtbox
+            //-   .chart.x-50
+            //-     p 50%
+            //-   .chartcontent 
+            //-     p python
+
+
+
+      section#portfolio
+        h3 我的作品
+        .container(data-aos="fade-up")
+          .row 
+            .col-lg-6.col-md-12
+              .Portfolio-box__context
+                article.probox
+                  .imgbox 
+                    //- img.u-object-fit(src="https://cdn.pixabay.com/photo/2023/01/01/21/33/mountain-7690893_640.jpg", alt="作品")
+                    img.u-object-fit(src="../dist/img/timeline.png", alt="作品")
+                  .contentbox
+                    h4 課堂練習-時間函數基礎
+                    .tagname 
+                      .tagst.taghtml HTML
+                      .tagst.tagcss CSS
+                      .tagst.tagjs Javascript
+                    span 練習Javascript 時間函數
+                    .btnbox 
+                      input.viewBtn(type="button" value="View" onClick="window.open('https://codepen.io/yan-vicky/pen/WNKVmvB')")
+            
+            .col-lg-6.col-md-12
+              .Portfolio-box__context
+                article.probox
+                  .imgbox 
+                    img.u-object-fit(src="../dist/img/specilbox.png", alt="作品")
+                  .contentbox
+                    h4 課堂練習-驚喜盒
+                    .tagname 
+                      .tagst.taghtml HTML
+                      .tagst.tagcss CSS
+                    span 練習HTML與CSS切板與動畫製作
+                    .btnbox 
+                      input.viewBtn(type="button" value="View" onClick="window.open('https://codepen.io/yan-vicky/pen/abKKEzE')")
+
+    footer
+      copyrights &copy; 2023 Hsiao Chun Yen
+
+    include includes/_scripts.pug
+
