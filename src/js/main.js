@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
      document.querySelector('main').style.display = "block";
      document.querySelector('header').style.display = "none";
+     AOS.refresh();
   }, 2000);
 })
 
